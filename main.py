@@ -10,6 +10,10 @@ oauth_helper = PrawOAuth2Mini(reddit_client, app_key=app_key,app_secret=app_secr
 subreddit = reddit_client.get_subreddit(subreddit)
 comments = subreddit.get_comments()
 
-def main()
+def main():
   while True:
-         
+  	print "Hurray!"
+
+
+if __name__ == '__main__':
+	main()
