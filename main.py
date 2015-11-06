@@ -2,8 +2,8 @@ import praw
 from prawoauth2 import PrawOAuth2Mini
 import settings
 
-app_key="DmG-aNQqxo74Ug"
-app_secret="5kqxICkUATl28D7TqmyTCbphKZk"
+app_key="LK4RXwAPMurBaw"
+app_secret="BkTngWpTZVEZvYd3qg1H0TveEaQ"
 
 reddit_client = praw.Reddit('Project by /u/weekerman')
 oauth_helper = PrawOAuth2Mini(reddit_client, app_key=app_key,app_secret=app_secret,access_token=access_token,
