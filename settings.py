@@ -1,3 +1,3 @@
 # settings.py
 scopes = ['identity','submit','read']
-user_agent = 'Bot by /u/...'
+user_agent = 'Hackers-thread by /u/weekerman'

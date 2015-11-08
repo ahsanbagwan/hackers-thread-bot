@@ -1,11 +1,11 @@
 import praw
 from prawoauth2 import PrawOAuth2Mini
-import settings
+from tokens import access_token, refresh_token, app_key, app_secret
+from settings import user_agent, scopes
 
-app_key="LK4RXwAPMurBaw"
-app_secret="BkTngWpTZVEZvYd3qg1H0TveEaQ"
+to_user="/u/weekerman"
 
-reddit_client = praw.Reddit('Project by /u/weekerman')
+reddit_client = praw.Reddit(user_agent=user_agent)
 oauth_helper = PrawOAuth2Mini(reddit_client, app_key=app_key,app_secret=app_secret,access_token=access_token,
 	                          refresh_token=refresh_token, scopes=scopes)
 
