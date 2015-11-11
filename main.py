@@ -23,7 +23,7 @@ def isPosted():
           print "hi"
       
 
-    # reddit_client.send_message('diaop', 'Here is a sample subject.', 'Here is a sample text body.')
+    # reddit_client.send_message('weekerman', 'Here is a sample subject.', 'Here is a sample text body.')
 
 def main():
   while True:
