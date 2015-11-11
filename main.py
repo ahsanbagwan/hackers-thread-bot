@@ -19,11 +19,10 @@ def isPosted():
     subreddit = reddit_client.get_subreddit('india')
     for submission in subreddit.get_hot(limit=10):
         print submission.title
-        if re.search(submission.title, 'Weekly Coders, Hackers & All Tech related thread'):
-          print "hi"
-      
-
-    # reddit_client.send_message('weekerman', 'Here is a sample subject.', 'Here is a sample text body.')
+        search_title = 'weekly coders'
+        if search_title in submission.title.lower() and submission.author == 'avinassh':
+            print('in if leg')
+            reddit_client.send_message('weekerman', 'Here is a sample subject.', 'Here is a sample text body.')
 
 def main():
   while True:
