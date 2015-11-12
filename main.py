@@ -1,6 +1,5 @@
 import praw
 import time
-import re
 from prawoauth2 import PrawOAuth2Mini
 from tokens import access_token, refresh_token, app_key, app_secret
 from settings import user_agent, scopes
@@ -14,20 +13,22 @@ oauth_helper = PrawOAuth2Mini(reddit_client, app_key=app_key,app_secret=app_secr
 	                          refresh_token=refresh_token, scopes=scopes)
 reddit_client.login('weekerman', 'wickerman')
 
-# login code goes here
-def isPosted():
+def is_posted():
     subreddit = reddit_client.get_subreddit('india')
     for submission in subreddit.get_hot(limit=10):
         print submission.title
         search_title = 'weekly coders'
         if search_title in submission.title.lower() and submission.author == 'avinassh':
             print('in if leg')
-            reddit_client.send_message('weekerman', 'Here is a sample subject.', 'Here is a sample text body.')
+            send_message()
+
+def send_message():
+    reddit_client.send_message('weekerman', 'Here is a sample subject.', 'Here is a sample text body.')
 
 def main():
   while True:
   	try:
-  		isPosted()
+  		is_posted()
   	except praw.errors.OAuthInvalidToken:
   		oauth_helper.refresh()
   	time.sleep(1800)
